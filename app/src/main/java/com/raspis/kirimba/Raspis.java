@@ -25,6 +25,7 @@ public class Raspis extends AppCompatActivity
 
     private WebView webView;
 
+    private static String link ="http://raspisanie.co.nf";
 
     /**
      * vib or week
@@ -45,7 +46,7 @@ public class Raspis extends AppCompatActivity
                 and = "/";
             }
         }
-        webView.loadUrl("http://raspis.co.nf"+and);
+        webView.loadUrl(link+and);
     }
 
     protected void show_hide_area_calendar(){
@@ -62,9 +63,9 @@ public class Raspis extends AppCompatActivity
         GregorianCalendar naw = new GregorianCalendar(TimeZone.getTimeZone("GMT+03"));
         calendar.setDate(naw.getTimeInMillis());
         long time = naw.getTimeInMillis()/1000;
-        Toast.makeText(getApplicationContext(),naw.getTime().getHours()+":"+naw.getTime().getMinutes()+" "+String.valueOf(time), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),naw.getTime().getHours()+":"+naw.getTime().getMinutes()+" "+String.valueOf(time), Toast.LENGTH_SHORT).show();
         show_hide_area_calendar();
-        webView.loadUrl("http://raspis.co.nf/?day="+time);
+        webView.loadUrl(link+"/?day="+time);
     }
 
 
@@ -96,9 +97,9 @@ public class Raspis extends AppCompatActivity
                 GregorianCalendar da = new GregorianCalendar(TimeZone.getTimeZone("GMT+03"));
                 da.set(year,month,dayOfMonth);
                 long time = da.getTimeInMillis()/1000;
-                Toast.makeText(getApplicationContext(),da.getTime().getHours()+":"+da.getTime().getMinutes()+" "+String.valueOf(time), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),da.getTime().getHours()+":"+da.getTime().getMinutes()+" "+String.valueOf(time), Toast.LENGTH_SHORT).show();
                 show_hide_area_calendar();
-                webView.loadUrl("http://raspis.co.nf/?day="+time);
+                webView.loadUrl(link+"/?day="+time);
             }
         });
 
